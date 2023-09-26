@@ -1,3 +1,4 @@
+
 const modeloUsuario = require('../modelos/usuarios.model')
 
 exports.index = (req,res)=>{

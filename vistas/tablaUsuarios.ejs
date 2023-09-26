@@ -43,19 +43,21 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <%usuarios.forEach(function(elemento){%>
                             <tr>
                                 <td>
-                                    nombre
+                                    <%=elemento.nombreUsuario%>
                                 </td>
                                 <td>
-                                    apellido
+                                    <%=elemento.apellidoUsuario%>
                                 </td>
                                 <td>
-                                    tele
+                                    <%=elemento.documentoUsuario%>
                                 </td>
+
                                 <td> <button class="btn btn-outline-success" role="button" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal"
-                                       >
+                                        >
                                         Actualizar
                                     </button>
 
@@ -64,6 +66,8 @@
                                     </td>
 
                             </tr>
+                            <%})%>
+
 
 
 
@@ -80,6 +84,10 @@
             
     </div>
 
+    <div class="form-group mb-2">
+    <button type="submit" class="btn btn-outline-dark mb-2">Descargar PDF</button>
+    <a href="/descargarExcel" class="btn btn-outline-dark mb-2"> Descargar Excel</a>
+</div>
 
 
     <!-- Modal eliminar  -->
