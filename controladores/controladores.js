@@ -48,6 +48,9 @@ exports.formularioRegistroUsuario =  (req,res)=>{
     res.render('formularioActualizarContra.ejs')
   }
   
+  exports.admin = (req,res)=>{
+    res.render('admin.ejs')
+  }
 
 //FUNCIONES CRUD-----------
 

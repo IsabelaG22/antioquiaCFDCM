@@ -16,6 +16,7 @@ router.get('/formularioAgendar', vistas.formularioAgendar);
 router.get('/formularioEstablecimientos', vistas.formularioEstablecimiento);
 router.get('/formularioManzanas', vistas.formularioManzanas);
 router.get('/formularioServicios', vistas.formularioServicios);
+router.get('/admin', vistas.admin)
 
 
 
