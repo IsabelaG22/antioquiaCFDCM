@@ -4,6 +4,10 @@ exports.index = (req,res)=>{
     res.render('index.ejs')
 }
 
+exports.localidades = (req,res)=>{
+  res.render('localidades.ejs')
+}
+
 exports.formularioRegistroUsuario =  (req,res)=>{
     res.render('formularioRegistrarUsuario.ejs')
 }
@@ -25,4 +29,4 @@ exports.registrarUsuario = async (req, res) => {
       })
       await registrarUsuario.save()
       console.log('hola magola')
-  } // funcion para que los datos del ususario sean guardados en ka base de datos y luego los muestre en la respectiva tabla para verlos9
+  } // funcion para que los datos del usuario sean guardados en ka base de datos y luego los muestre en la respectiva tabla para verlos9
