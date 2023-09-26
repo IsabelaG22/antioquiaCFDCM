@@ -11,31 +11,8 @@
     <link rel="stylesheet" href="https://bootswatch.com/5/pulse/bootstrap.min.css">
 </head>
 <body>
-    <!--Barra de navegación-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYfim9FxnRj1jMeYzsf8A-dFlJHQDRzXy3rg&usqp=CAU" alt="" height="60" width="50">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">¿Quienes somos?</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/localidades">Localidades</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">#</a>
-              </li>
-            </ul>
-      
-              <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</button>
-              <a class="btn btn-outline-primary" type="submit" href="/formularioRegistro">Registrarse</a>
-          </div>
-        </div>
-      </nav>
+  <%- include('./parciales/navbar')%>
+    
     
     <div class="item active">
         <img src="https://manzanasdelcuidado.gov.co/wp-content/uploads/2023/08/home-manz-2_.jpg" class="d-block w-100" alt="...">
