@@ -30,27 +30,67 @@
                 <a class="nav-link" href="#">Servicios</a>
               </li>
             </ul>
-              <button class="btn btn-outline-primary me-2" type="submit">Iniciar sesión</button>
-              <button class="btn btn-outline-primary" type="submit">Registrarse</button>
+      
+              <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</button>
+              <a class="btn btn-outline-primary" type="submit" href="/formularioRegistro">Registrarse</a>
           </div>
         </div>
       </nav>
     
-    <div class="carousel-item active">
+    <div class="item active">
         <img src="https://manzanasdelcuidado.gov.co/wp-content/uploads/2023/08/home-manz-2_.jpg" class="d-block w-100" alt="...">
     </div>
   
-  
+    <div>
+      <h3 class="text-center">Encuentra aquí servicios de cuidado</h3>
+      <div class="card border-primary mb-3" style="max-width: 20rem;">
+        <div class="card-header">Asesorias</div>
+        <div class="card-body">
+          <h4 class="card-title">Asesoria psicológica</h4>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
 
 
 
+    <!-- Modal -->
+ <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="autenticar" method="POST">
+          <div class="mb-3">
+            <label for="correoElectronicoUsuario" class="form-label p-1">Correo electrónico:</label>
+              <input type="text" class="form-control" id="correoElectronicoUsuario" name="correoElectronicoUsuario" inputmode="email" minlength="10" maxlength="100" required>
+
+          </div>
+          <div class="mb-3">
+            <label for="contraseñaUsuario" class="form-label p-1">Contraseña:</label>
+            <input type="password" class="form-control" id="contraseñaUsuario" name="contraseñaUsuario" inputmode="text" minlength="6" maxlength="50" required>
+
+          </div>
+          <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <p class="mb-0">¿Olvidaste tu contraseña? <a href="/recuperarContrasena">Recuperar contraseña</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
     <!-- Agrega los enlaces a los archivos de Bootstrap y jQuery (si es necesario) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
     <!-- Si necesitas jQuery, descomenta la siguiente línea -->
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 
     <footer>
-
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/768px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50" width="50">
     </footer>
 </body>
 </html>
