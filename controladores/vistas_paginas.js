@@ -40,7 +40,7 @@ exports.registrarUsuario = async (req, res) => {
   }
 
   exports.recuperarContra = (req,res)=>{
-    res.render('formualrioRecuperarContraseña.ejs')
+    res.render('formularioRecuperarContraseña.ejs')
   }
 
   exports.actualizarContra = (req,res)=>{
