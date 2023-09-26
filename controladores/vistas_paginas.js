@@ -30,3 +30,20 @@ exports.registrarUsuario = async (req, res) => {
       await registrarUsuario.save()
       console.log('hola magola')
   } // funcion para que los datos del usuario sean guardados en ka base de datos y luego los muestre en la respectiva tabla para verlos9
+
+  exports.tablas = (req,res)=>{
+    res.render('tabla')
+  }
+
+  exports.tablaUsuarios = (req,res)=>{
+    res.render('tablaUsuarios.ejs')
+  }
+
+  exports.recuperarContra = (req,res)=>{
+    res.render('formualrioRecuperarContraseña.ejs')
+  }
+
+  exports.actualizarContra = (req,res)=>{
+    res.render('formularioActualizarContra.ejs')
+  }
+  
