@@ -21,6 +21,7 @@ router.get('/tablaAgendas', vistas.tablaAgendas);
 router.get('/tablaEstablecimientos', vistas.tablaEstablecimiento);
 router.get('/formularioRecuperar', vistas.recuperarContra);
 router.get('/formularioActualizar', vistas.actualizarContra);
+router.get('/informacionManzanas',vistas.informacionManzanas);
 
 
 //Formularios registro 
