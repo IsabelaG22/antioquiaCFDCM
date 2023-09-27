@@ -41,13 +41,16 @@ exports.formularioRegistroUsuario =  (req,res)=>{
     })
   }
   exports.recuperarContra = (req,res)=>{
-    res.render('formualrioRecuperarContraseña.ejs')
+    res.render('formularioRecuperarContraseña.ejs')
   }
 
   exports.actualizarContra = (req,res)=>{
     res.render('formularioActualizarContra.ejs')
   }
   
+  exports.admin = (req,res)=>{
+    res.render('admin.ejs')
+  }
 
 //FUNCIONES CRUD-----------
 
