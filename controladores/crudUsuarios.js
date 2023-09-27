@@ -48,28 +48,37 @@ exports.actualizarusuario = async (req, res) => {
 
 
 
-exports.inicioSesion = async (req, res) => {
-    const correo = req.body.correoElectronicoUsuario
-    const contraseña = req.body.contraseñaUsuario
-
-    const comprobando = await modeloUsuario.findOne({ correoElectronicoUsuario: correo })
-    const comprobandoc = await modeloUsuario.findOne({ contraseñaUsuario: contraseña })
-
-
-    if (comprobando === null) {
-      console.log('error')
-
-      if (comprobandoc.contraseñaUsuario === contraseña &&  comprobando.correoElectronicoUsuario === correo) {
-      res.redirect('/')
-
-
-        console.log('bienvenido vendedor')
+  exports.inicioSesion = async (req, res) => {
+    try {
+      const correo = req.body.correoElectronicoUsuario;
+      const contraseña = req.body.contraseñaUsuario;
+  
+      // Buscar al usuario por su correo electrónico
+      const usuario = await modeloUsuario.findOne({ correoElectronicoUsuario: correo });
+  
+      if (!usuario) {
+        // El usuario no existe
+        console.log('Usuario no encontrado');
+        return res.send('Usuario no encontrado');
       }
-    } else {
-      res.send('ingresa la contraseña correcta')
+  
+      // Comprobar la contraseña
+      if (usuario.contraseñaUsuario === contraseña) {
+        // Contraseña correcta
+        console.log('Bienvenido vendedor');
+        // Redirigir a la página de inicio o realizar alguna acción de autenticación aquí
+        return res.redirect('/');
+      } else {
+        // Contraseña incorrecta
+        console.log('Contraseña incorrecta');
+        return res.send('Ingresa la contraseña correcta');
+      }
+    } catch (error) {
+      console.error('Error en inicio de sesión:', error);
+      return res.status(500).send('Error en el servidor');
     }
-  }
-
+  };
+  
 
 //exportar exel
 
