@@ -8,6 +8,7 @@ const dotenv = require('dotenv')
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })) 
 
+app.use('/estaticas', express.static('estaticas'))
 
 dotenv.config()
 
