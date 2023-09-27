@@ -16,9 +16,10 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'vistas'))
 app.use(morgan('dev'))
 
-PORT=3000
+PORT=4001 
+
 app.listen(PORT, ()=>{
-    console.log('Conectado en el puerto 3000')
+    console.log('Conectado en el puerto: ' + PORT)
 })
 
 

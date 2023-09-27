@@ -27,7 +27,7 @@
 
         <div class="container text-center ">
             <button type="submit" class="btn btn-outline-dark mb-2">Descargar PDF</button>
-            <a href="/descargarExcelMunicipio" class="btn btn-outline-dark mb-2"> Descargar Excel</a>
+            <a href="/descargarExcelServicios" class="btn btn-outline-dark mb-2"> Descargar Excel</a>
         </div>
 
     </div>
@@ -37,31 +37,35 @@
         <table id="table_id" class="display table table-bordered w-100">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Numero manzanas</th>
+                    <th>codigo</th>
+                    <th>nombre</th>
+                    <th>descripcion</th>
                     <th>Opciones</th>
                 </tr>
             </thead>
             <tbody>
-                <%municipios.forEach(function(elemento){%>
+                <%servicios.forEach(function(elemento){%>
                     <tr>
                         <td>
-                            <%=elemento.nombreMunicipio%>
+                            <%=elemento.codigo%>
                         </td>
                         <td>
-                            <%=elemento.numeroManzanas%>
+                            <%=elemento.nombre%>
                         </td>
-                      
+                        <td>
+                            <%=elemento.descripcion%>
+                        </td>
+
                         <td> <button class="btn btn-outline-success" role="button" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal" onclick="rellenar(
                                     `<%=elemento._id%>`,
-                                    `<%=elemento.nombreMunicipio%>`,
-                                    `<%=elemento.numeroManzanas%>`,
-                                    )">
+                                    `<%=elemento.codigo%>`,
+                                    `<%=elemento.nombre%>`,
+                                    `<%=elemento.descripcion%>`)">
                                 Actualizar
                             </button>
 
-                            <a href="/eliminarM/<%= elemento._id %>" class="btn btn-outline-danger"
+                            <a href="/eliminarS/<%= elemento._id %>" class="btn btn-outline-danger"
                                 role="button">Eliminar</a>
                         </td>
 
@@ -74,8 +78,9 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Numero manzanas</th>
+                    <th>codigo</th>
+                    <th>nombre</th>
+                    <th>descripcion</th>
                     <th>Opciones</th>
                 </tr>
             </tfoot>
@@ -89,22 +94,25 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Municipio</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Servicio</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" id="formularioActualizar" action="/actualizarMunicipio">
+                    <form method="POST" id="formularioActualizar" action="/actualizarServicio">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="idnuevo" name="idnuevo" hidden>
+                            <label for="idnuevo" class="form-label p-1">id:</label>
+                            <input type="text" class="form-control" id="idnuevo" name="idnuevo" readonly>
 
 
 
-                            <label for="nombreM" class="form-label p-1">Nombre:</label>
-                            <input type="text" class="form-control" id="nombreM" name="nombreM">
+                            <label for="Codigo" class="form-label p-1">Codigo:</label>
+                            <input type="text" class="form-control" id="Codigo" name="Codigo">
 
-                            <label for="numeroM" class="form-label p-1">Numero Manzanas:</label>
-                            <input type="text" class="form-control" id="numeroM" name="Nombre">
+                            <label for="Nombre" class="form-label p-1">Nombre:</label>
+                            <input type="text" class="form-control" id="Nombre" name="Nombre">
                             
+                            <label for="Descripcion" class="form-label">Descripcion:</label>
+                            <textarea type="text" class="form-control" id="Descripcion" name="Descripcion"></textarea>
 
                             <div class="modal-footer">
                                 <input type="submit" value="Actualizar">
@@ -115,10 +123,11 @@
             </div>
 
             <script>
-                function rellenar(id, Nombre, numero) {
+                function rellenar(id, codigo, nombre, descripcion) {
                     idnuevo.value = id
-                    nombreM.value = Nombre
-                    numeroM.value = numero
+                    Codigo.value = codigo
+                    Nombre.value = nombre
+                    Descripcion.value = descripcion
                 }
             </script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
