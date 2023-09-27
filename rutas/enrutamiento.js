@@ -15,6 +15,7 @@ router.get('/tablaUsuarios', vistas.tablaUsuarios);
 router.get('/tablaServicios', vistas.tablaServicios)
 router.get('/formularioRecuperar', vistas.recuperarContra);
 router.get('/formularioActualizar', vistas.actualizarContra);
+router.get('/informacionManzanas',vistas.informacionManzanas);
 
 
 //Formularios registro 

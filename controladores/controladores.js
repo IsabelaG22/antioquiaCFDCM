@@ -7,12 +7,19 @@ exports.index = (req, res) => {
   res.render('index.ejs')
 }
 
-exports.localidades = (req, res) => {
-  res.render('localidades.ejs')
+exports.localidades = async(req, res) => {
+  const municipios = await modeloMunicipios.find() 
+  res.render('localidades.ejs', {
+    localidades:municipios
+  })
 }
 
 exports.admin = (req, res) => {
   res.render('admin.ejs')
+}
+
+exports.informacionManzanas = (req, res) => {
+  res.render('info_Manzanas.ejs')
 }
 
 
