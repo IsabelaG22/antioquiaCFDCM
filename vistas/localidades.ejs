@@ -5,21 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Localidades</title>
     <link rel="stylesheet" href="https://bootswatch.com/5/pulse/bootstrap.min.css">
+    <link rel="stylesheet" href="/estaticas/styleBackground.css">
 </head>
 <body>
   <%- include('./parciales/navbar')%>
   <br>
 
-    <div class="mt-5">
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Título de la tarjeta</h5>
-              <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-              <a href="#" class="btn btn-primary">Ir a algún lugar</a>
+  <!--cards localidades-->
+  <div class="container">
+    <h3 class="text-center mt-2">¡Encuentra la Manzana de cuidado para ti!</h3>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mb-2 border-success" style="width: 100%;">
+                <img src="/estaticas/assets/imagenes/card-lavanderia.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Lavanderías comunitarias</h5>
+                    <p class="card-text">Las lavanderías comunitarias hacen parte de las 'Manzanas del Cuidado', estos centros comunitarios están abiertos para todas las personas que cuidan personas que requieren altos niveles de apoyo como niños menores de 5 años, personas en condición de discapacidad o personas mayores.</p>
+                    <a href="#" class="btn btn-outline-primary" role="button" data-bs-toggle="modal" data-bs-target="#Modal">Información</a>
+                </div>
             </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card mb-2 border-success" style="width: 100%;">
+                <img src="/estaticas/assets/imagenes/unidades_moviles.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Unidades de Cuidado</h5>
+                    <p class="card-text">Tienen el objetivo de llegar a zonas rurales y urbanas, estan equipadas para que las cuidadoras puedan ofrecer los servicios que ofrece las Manzanas del cuidado.</p>
+                    <a href="#" class="btn btn-outline-primary" role="button" data-bs-toggle="modal" data-bs-target="#Modal">Información</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-2 border-success" style="width: 100%;">
+              <img src="/estaticas/assets/imagenes/card-lavanderia.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title text-center">Educación</h5>
+                  <p class="card-text">Las personas cuidadoras y a quienes cuidan, podrán beneficiarse de actividades de formación como bachiller, formación complementaria, titulada, certificación de saberes, entre otras.</p>
+                  <a href="#" class="btn btn-outline-primary" role="button" data-bs-toggle="modal" data-bs-target="#Modal">Información</a>
+              </div>
           </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card mb-2 border-success" style="width: 100%;">
+            <img src="/estaticas/assets/imagenes/card-lavanderia.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-center">Actividades</h5>
+                <p class="card-text">En Manzanas del cuidado encontrarás talleres de yoga, cuidado para mujeres gestantes, aerobicos; actividades lúdicas y recreativas para el mejoramiento de la calidad de vida.</p>
+                <a href="#" class="btn btn-outline-primary" role="button" data-bs-toggle="modal" data-bs-target="#Modal">Información</a>
+            </div>
+        </div>
     </div>
+</div>
+    
     <div class="text-center mt-4">
       <h3 class="text-center">Encuentra la Manzana cuidadora más cercana</h3>
       <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d207921.16688612735!2d-74.19906808116868!3d4.653478211957052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smanzanas%20cuidadoras!5e0!3m2!1ses!2sco!4v1695771721591!5m2!1ses!2sco" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

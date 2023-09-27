@@ -1,0 +1,14 @@
+body::before {
+    content: "";
+    background-image: url('/estaticas/assets/imagenes/fondo-registroUsu.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.5; /* Ajusta este valor según tu preferencia (0.5 para 50% de opacidad) */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+}
