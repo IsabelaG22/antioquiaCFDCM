@@ -8,7 +8,6 @@ const SchemaServicios = new coneccionBDMongo.Schema({
     nombre: {
         type: String,
         require: true,
-        unique: true
     },
     descripcion:{
         type: String,

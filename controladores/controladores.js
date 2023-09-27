@@ -1,6 +1,9 @@
 const modeloUsuario = require('../modelos/usuarios.model')
 const modeloServicios = require('../modelos/servicios.model')
 const modeloMunicipios = require('../modelos/municipios.model')
+const modelosManzanas = require('../modelos/manzanas.model');
+const modeloAgendas = require('../modelos/agendas.model')
+const modeloEstablecimientos = require('../modelos/establecimientos.model')
 
 //FUNCIONES PARA RENDERISAR LAS PAGINAS-------
 exports.index = (req, res) => {
@@ -51,6 +54,24 @@ exports.actualizarContra = (req, res) => {
 
 
 //TABLAS
+exports.tablaEstablecimiento = async (req,res)=>{
+  const tablaEstablecimientos = await modeloEstablecimientos.find()
+  res.render('tablaEstablecimientos.ejs',{
+    establecimiento: tablaEstablecimientos
+  })
+}
+exports.tablaAgendas = async (req,res)=>{
+  const tablaAgendas = await modeloAgendas.find()
+  res.render('tablaAgendas.ejs',{
+    agendas: tablaAgendas
+  })
+}
+exports.tablaManzanas = async (req, res)=>{
+  const tablaManzanas = await modelosManzanas.find()
+  res.render('tablaManzanas.ejs',{
+    manzanas: tablaManzanas
+  })
+}
 exports.tablaMunicipios = async (req, res) => {
   const tablaMunicipios = await modeloMunicipios.find()
   res.render('tablaMunicipios',{
