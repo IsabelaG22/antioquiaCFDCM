@@ -10,92 +10,97 @@
     <!--lINK CSS DE BOOSTRAP-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://bootswatch.com/5/pulse/bootstrap.min.css">
+    
 
     <title>Formulario registro</title>
 </head>
 
 
 <body>
+    <%- include('./parciales/navbar')%>
+
     <!--Formulario registro de usuario-->
     <div class="container" >
-        <h2>Registrarse</h2> <br>
-        <form action="/registrarUsuario" method="POST">
+        <div class="row"></div>
+            <div class="col-md-6">
+            <h2>Registrarse</h2> <br>
+            <form action="/registrarUsuario" method="POST">
 
-            <div class="mb-3">
-                <div class="col">
-                    <label for="tipo" class="form-label">Tipo de documento:</label>
-                    <input type="text" class="form-control" id="tipo" name="tipo" inputmode="text" required>
+                <div class="mb-3">
+                    <div class="col">
+                        <label for="tipo" class="form-label">Tipo de documento:</label>
+                        <input type="text" class="form-control" id="tipo" name="tipo" inputmode="text" required>
+                    </div>
                 </div>
-            </div>
 
-            <div class="mb-3">
-                <div class="col">
-                    <label for="documento" class="form-label">Documento:</label>
-                    <input type="number" class="form-control" id="documento" name="documento" inputmode="numeric"
-                        minlength="10" maxlength="50" required>
+                <div class="mb-3">
+                    <div class="col">
+                        <label for="documento" class="form-label">Documento:</label>
+                        <input type="number" class="form-control" id="documento" name="documento" inputmode="numeric"
+                            minlength="10" maxlength="50" required>
+                    </div>
                 </div>
-            </div>
-            <div class="mb-3">
-                <div class="col">
-                    <label for="Nombre" class="form-label">Nombres:</label>
-                    <input type="text" class="form-control" id="Nombre" name="Nombre" inputmode="text" minlength="3"
+                <div class="mb-3">
+                    <div class="col">
+                        <label for="Nombre" class="form-label">Nombres:</label>
+                        <input type="text" class="form-control" id="Nombre" name="Nombre" inputmode="text" minlength="3"
+                            maxlength="50" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="Apellido" class="form-label">Apellidos:</label>
+                        <input type="text" class="form-control" id="Apellido" name="Apellido" inputmode="text" minlength="3"
+                            maxlength="50" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="Telefono" class="form-label">Telefono:</label>
+                        <input type="number" class="form-control" id="Telefono" name="Telefono" inputmode="tel" minlength="10"
+                            maxlength="50" required>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección:</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" inputmode="text" minlength="10"
                         maxlength="50" required>
                 </div>
-            </div>
 
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="Apellido" class="form-label">Apellidos:</label>
-                    <input type="text" class="form-control" id="Apellido" name="Apellido" inputmode="text" minlength="3"
+                <div class="mb-3">
+                    <label for="Ciudad" class="form-label">Ciudad:</label>
+                    <input type="text" class="form-control" id="Ciudad" name="Ciudad" inputmode="text" minlength="10"
                         maxlength="50" required>
                 </div>
-            </div>
 
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="Telefono" class="form-label">Telefono:</label>
-                    <input type="number" class="form-control" id="Telefono" name="Telefono" inputmode="tel" minlength="10"
+                <div class="mb-3">
+                    <label for="Ocupacion" class="form-label">Ocupacion: </label>
+                    <input type="text" class="form-control" id="Ocupacion" name="Ocupacion" inputmode="text" minlength="8"
                         maxlength="50" required>
                 </div>
-            </div>
-            
-            <div class="mb-3">
-                <label for="direccion" class="form-label">Dirección:</label>
-                <input type="text" class="form-control" id="direccion" name="direccion" inputmode="text" minlength="10"
-                    maxlength="50" required>
-            </div>
 
-            <div class="mb-3">
-                <label for="Ciudad" class="form-label">Ciudad:</label>
-                <input type="text" class="form-control" id="Ciudad" name="Ciudad" inputmode="text" minlength="10"
-                    maxlength="50" required>
-            </div>
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo electronico:</label>
+                    <input type="email" class="form-control" id="correo" name="correo" inputmode="email" minlength="10"
+                        maxlength="50" required>
+                </div>
 
-            <div class="mb-3">
-                <label for="Ocupacion" class="form-label">Ocupacion: </label>
-                <input type="text" class="form-control" id="Ocupacion" name="Ocupacion" inputmode="text" minlength="8"
-                    maxlength="50" required>
-            </div>
+                <div class="mb-3">
+                    <label for="contraseña" class="form-label">Contraseña: </label>
+                    <input type="password" class="form-control" id="contraseña" name="contraseña" inputmode="text"
+                        minlength="8" maxlength="50" required>
+                </div>
 
-            <div class="mb-3">
-                <label for="correo" class="form-label">Correo electronico:</label>
-                <input type="email" class="form-control" id="correo" name="correo" inputmode="email" minlength="10"
-                    maxlength="50" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="contraseña" class="form-label">Contraseña: </label>
-                <input type="password" class="form-control" id="contraseña" name="contraseña" inputmode="text"
-                    minlength="8" maxlength="50" required>
-            </div>
-
-
-            <button type="submit" class="btn btn-outline-primary">Registrarse</button>
+                <button type="submit" class="btn btn-outline-primary">Registrarse</button>
+            </div>    
         </form>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
