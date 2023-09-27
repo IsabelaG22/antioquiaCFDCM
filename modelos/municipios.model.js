@@ -8,7 +8,6 @@ const SchemaMunicipio = new coneccionBDMongo.Schema({
     numeroManzanas: {
         type: String,
         require: true,
-        unique: true
     }
 })
 

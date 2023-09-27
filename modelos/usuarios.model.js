@@ -20,7 +20,6 @@ const Schemausuarios = new coneccionBDMongo.Schema({
     },
     telefonoUsuario: {
         type: String,
-        unique: true
 
     },
     ubicacionUsuario: {

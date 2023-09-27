@@ -1,7 +1,10 @@
 const vistas = require('../controladores/controladores');
 const crudUsuarios = require('../controladores/crudUsuarios');
 const crudServicios = require('../controladores/crudServicios');
-const crudMunicipios = require('../controladores/crudMunicipios')
+const crudMunicipios = require('../controladores/crudMunicipios');
+const crudManzanas = require('../controladores/crudManzanas');
+const crudAgendas = require('../controladores/crudAgendas');
+const crudEstablecimientos = require('../controladores/crudEstablecimientos')
 const express = require('express');
 const router = express.Router();
 
@@ -12,7 +15,10 @@ router.get('/admin', vistas.admin);
 router.get('/localidades', vistas.localidades);
 router.get('/tablaMunicipios', vistas.tablaMunicipios);
 router.get('/tablaUsuarios', vistas.tablaUsuarios);
-router.get('/tablaServicios', vistas.tablaServicios)
+router.get('/tablaServicios', vistas.tablaServicios);
+router.get('/tablaManzanas', vistas.tablaManzanas);
+router.get('/tablaAgendas', vistas.tablaAgendas);
+router.get('/tablaEstablecimientos', vistas.tablaEstablecimiento);
 router.get('/formularioRecuperar', vistas.recuperarContra);
 router.get('/formularioActualizar', vistas.actualizarContra);
 
@@ -48,7 +54,27 @@ router.get('/eliminarM/:id', crudMunicipios.eliminarMunicipio);
 router.get('/descargarExcelMunicipio', crudMunicipios.descargarExcel);
 router.post('/actualizarMunicipio', crudMunicipios.actualizarMunicipio);
 
+//Manzanas
 
+router.post('/registrarManzana', crudManzanas.registrarManzana);
+router.get('/eliminarManzana/:id', crudManzanas.eliminarManzana);
+router.get('/descargarExcelManzana', crudManzanas.descargarExcel);
+router.post('/actualizarManzana', crudManzanas.actualizarManzana);
+
+//Agendas
+
+router.post('/registrarAgenda', crudAgendas.registrarAgenda);
+router.get('/eliminarAgenda/:id', crudAgendas.eliminarAgenda);
+router.get('/descargarExcelAgenda', crudAgendas.descargarExcel);
+router.post('/actualizarAgenda', crudAgendas.actualizarAgenda);
+
+
+//Establecimientos
+
+router.post('/registrarEstablecimiento', crudEstablecimientos.registrarEstablecimiento);
+router.get('/eliminarEstablecimiento/:id', crudEstablecimientos.eliminarEstablecimiento);
+router.get('/descargarExcelEstablecimiento', crudEstablecimientos.descargarExcel);
+router.post('/actualizarEstablecimiento', crudEstablecimientos.actualizarEstablecimiento);
 
 
 module.exports = router

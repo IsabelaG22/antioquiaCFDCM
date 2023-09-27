@@ -8,12 +8,10 @@ const SchemaAgendas = new coneccionBDMongo.Schema({
     servicio: {
         type: String,
         require: true,
-        unique: true
     },
     fecha: {
         type: Date,
         require: true,
-        unique: true
     },
     correoElectronico: {
         type: String,

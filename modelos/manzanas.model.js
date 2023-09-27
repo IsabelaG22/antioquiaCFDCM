@@ -8,7 +8,6 @@ const SchemaManzanas = new coneccionBDMongo.Schema({
     nombre: {
         type: String,
         require: true,
-        unique: true
     },
     localidad:{
         type:String,
