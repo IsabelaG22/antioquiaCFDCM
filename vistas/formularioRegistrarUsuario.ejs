@@ -27,6 +27,7 @@
                 <div class="d-flex align-items-stretch">
                     <form action="/registrarUsuario" method="POST">
 
+<<<<<<< HEAD
                         <div class="mb-3">
                             <div class="col">
                                 <label for="tipo" class="form-label">Tipo de documento:</label>
@@ -65,6 +66,44 @@
                             </div>
                         </div>
                     </form>
+=======
+                <div class="mb-3">
+                    <div class="col">
+                        <label for="tipo" class="form-label">Tipo de documento:</label>
+                        <input type="text" class="form-control" id="tipo" name="tipo" inputmode="text" maxlength="100" required >
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="col">
+                        <label for="documento" class="form-label">Documento:</label>
+                        <input type="number" class="form-control" id="documento" name="documento" inputmode="numeric"
+                            minlength="10" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="col">
+                        <label for="Nombre" class="form-label">Nombres:</label>
+                        <input type="text" class="form-control" id="Nombre" name="Nombre" inputmode="text" minlength="3"
+                            maxlength="100" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="Apellido" class="form-label">Apellidos:</label>
+                        <input type="text" class="form-control" id="Apellido" name="Apellido" inputmode="text" minlength="3"
+                            maxlength="100" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="Telefono" class="form-label">Telefono:</label>
+                        <input type="number" class="form-control" id="Telefono" name="Telefono" inputmode="tel" minlength="10"
+                            required>
+                    </div>
+>>>>>>> dev_IsabelaG
                 </div>
             </div>
             <div class="col-md-6">
@@ -103,9 +142,42 @@
                         <button type="submit" class="btn btn-outline-primary">Registrarse</button>
                     </form>
                 </div>
+<<<<<<< HEAD
             </div> 
            
         </div>
+=======
+
+                <div class="mb-3">
+                    <label for="Ciudad" class="form-label">Ciudad:</label>
+                    <input type="text" class="form-control" id="Ciudad" name="Ciudad" inputmode="text" 
+                        maxlength="100" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="Ocupacion" class="form-label">Ocupacion: </label>
+                    <input type="text" class="form-control" id="Ocupacion" name="Ocupacion" inputmode="text"
+                        maxlength="100" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo electronico:</label>
+                    <input type="email" class="form-control" id="correo" name="correo" inputmode="email" 
+                        maxlength="100" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="contraseña" class="form-label">Contraseña: </label>
+                    <input type="password" class="form-control" id="contraseña" name="contraseña" inputmode="text"
+                        minlength="8" maxlength="50" required>
+                </div>
+                <input type="text" class="form-control" id="rol" name="rol"hidden value="usuario">
+
+                <button type="submit" class="btn btn-outline-primary">Registrarse</button>
+            </div>    
+        </form>
+
+>>>>>>> dev_IsabelaG
     </div>
 
    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

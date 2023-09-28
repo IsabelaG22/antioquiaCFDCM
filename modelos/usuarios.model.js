@@ -42,6 +42,10 @@ const Schemausuarios = new coneccionBDMongo.Schema({
     contraseñaUsuario: {
         type: String,
         require: true
+    },
+    rol:{
+        type:String,
+        require:true
     }
 
 })

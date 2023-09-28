@@ -15,9 +15,13 @@
 
 </head>
 
+<div class="container text-center">
+    <a href="/admin" class="btn btn-outline-dark mb-2">volver</a>
+
+
+</div>
 
 <body>
-    <!--Formulario registro de usuario-->
     <div class="container">
         <h2>Guardar establecimiento</h2> <br>
         <form action="/registrarEstablecimiento" method="POST">
@@ -31,19 +35,19 @@
             <div class="col">
                 <label for="Nombre" class="form-label">Nombre:</label>
                 <input type="text" class="form-control" id="Nombre" name="Nombre" 
-                    minlength="10" maxlength="50" required>
+                     maxlength="100" required>
             </div>
 
             <div class="col">
                 <label for="Responsable" class="form-label">Responsable:</label>
                 <input type="text" class="form-control" id="Responsable" name="Responsable"
-                    minlength="10" maxlength="50" required>
+                     maxlength="100" required>
             </div>
 
             <div class="col">
                 <label for="Direccion" class="form-label">Direccion:</label>
                 <input type="text" class="form-control" id="Direccion" name="Direccion" inputmode="numeric"
-                    minlength="10" maxlength="50" required>
+                    maxlength="100" required>
             </div>
 
             

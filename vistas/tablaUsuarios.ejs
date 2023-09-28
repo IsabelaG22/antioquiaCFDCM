@@ -28,6 +28,8 @@
         <div class="container text-center ">
             <button type="submit" class="btn btn-outline-dark mb-2">Descargar PDF</button>
             <a href="/descargarExcel" class="btn btn-outline-dark mb-2"> Descargar Excel</a>
+            <a href="/admin" class="btn btn-outline-dark mb-2">volver</a>
+
         </div>
 
     </div>
@@ -41,6 +43,7 @@
                     <th>Correo</th>
                     <th>Ubicación</th>
                     <th>Ocupación</th>
+                    <th>rol</th>
                     <th>Opciones</th>
                 </tr>
             </thead>
@@ -59,6 +62,9 @@
                         <td>
                             <%=elemento.ocupacionUsuario%>
                         </td>
+                        <td>
+                            <%=elemento.contraseñaUsuario%>
+                        </td>
 
                         <td> <button class="btn btn-outline-success" role="button" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal" onclick="rellenar(
@@ -66,7 +72,7 @@
                                     `<%=elemento.nombreUsuario%>`,
                                     `<%=elemento.correoElectronicoUsuario%>`,
                                     `<%=elemento.ubicacionUsuario%>`,
-                                    `<%=elemento.ocupacionUsuario%>` )">
+                                    `<%=elemento.ocupacionUsuario%>`)">
                                 Actualizar
                             </button>
 
@@ -87,6 +93,7 @@
                     <th>Correo</th>
                     <th>Ubicación</th>
                     <th>Ocupación</th>
+                    <th>rol</th>
                     <th>Opciones</th>
                 </tr>
             </tfoot>

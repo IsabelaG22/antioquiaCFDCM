@@ -40,7 +40,7 @@ exports.eliminarEstablecimiento = async (req,res)=>{
 
 //exportar exel
 
-  // GENERAR TABLA EXCEL DE LOS DATOS SOBRE LOS PRODUCTOS ----------------------------------------
+  // GENERAR TABLA EXCEL DE LOS DATOS SOBRE LOS ESTABLECIMIENTOS ----------------------------------------
 
   const xl = require('excel4node')
   const path = require('path')
@@ -89,11 +89,11 @@ exports.eliminarEstablecimiento = async (req,res)=>{
   
     // agregamos el contenido de la base de datos con un for o un forEach para llamar todos los datos
   
-    listaServicios.forEach(datoUsuario => {
-      ws.cell(fila, 1).string(datoUsuario.codigo).style(contenidoEstilo)
-      ws.cell(fila, 2).string(datoUsuario.nombre).style(contenidoEstilo)
-      ws.cell(fila, 3).string(datoUsuario.responsable).style(contenidoEstilo)
-      ws.cell(fila, 4).string(datoUsuario.direccion).style(contenidoEstilo)
+    listaServicios.forEach(datoEstablecimientos => {
+      ws.cell(fila, 1).string(datoEstablecimientos.codigo).style(contenidoEstilo)
+      ws.cell(fila, 2).string(datoEstablecimientos.nombre).style(contenidoEstilo)
+      ws.cell(fila, 3).string(datoEstablecimientos.responsable).style(contenidoEstilo)
+      ws.cell(fila, 4).string(datoEstablecimientos.direccion).style(contenidoEstilo)
   
       fila = fila + 1
     })
