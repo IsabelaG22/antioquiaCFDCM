@@ -102,57 +102,82 @@ exports.cerrarsesion = async (req, res) => {
 
 //Actualizar contraseña
 
-// Formulario correo recuperar CONTRASEÑA
+// Formulario para recuperar CONTRASEÑA
 exports.recuperarContraseña = (req, res) => {
-  res.render('../frontend/vistas/usuarios/formularioRecuperarContraseña.ejs')
+  res.render('../frontend/vistas/usuarios/formularioRecuperarContraseña.ejs');
 }
 
 // RECUPERAR CONTRASEÑA
 exports.actualizarContrasena = async (req, res) => {
-  const buscarId = await modeloUsuario.findOne({ _id: req.params.id })
-  res.render('../frontend/vistas/usuarios/formularioActualizarContra.ejs', { buscarId })
+  try {
+    const buscarId = await modeloUsuario.findOne({ _id: req.params.id });
+
+    if (!buscarId) {
+      // Manejar el caso en el que no se encuentra ningún usuario con el ID proporcionado.
+      return res.status(404).send('Usuario no encontrado');
+    }
+
+    res.render('../frontend/vistas/usuarios/formularioActualizarContra.ejs', { buscarId });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error interno del servidor');
+  }
 }
 
 // ENVIAR CORREO RECUPERAR CONTRASEÑA
 exports.rcontrasena = async (req, res) => {
-  const correo = req.body.correoElectronicoUsuario
-  const usuarioA = await modeloUsuario.findOne({ correoElectronicoUsuario: correo })
+  try {
+    const correo = req.body.correoElectronicoUsuario;
+    const usuarioA = await modeloUsuario.findOne({ correoElectronicoUsuario: correo });
 
-  console.log(req.body.correoElectronicoUsuario)
-  console.log('entra')
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'igrisales01@misena.edu.co',
-      pass: ` ${process.env.DB_SEGURA}`
+    if (!usuarioA) {
+      // Manejar el caso en el que no se encuentra ningún usuario con el correo proporcionado.
+      return res.status(404).send('Correo electrónico no encontrado');
     }
-  })
 
-  const mailOptions = {
-    from: 'igrisales01@misena.edu.co',
-    to: correo,
-    subject: 'Recuperar contraseña',
-    text: `para actualizar la contraseña ingresa aqui: http://localhost:4001/actualizarContrasena/${usuarioA._id}`
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'igrisales01@misena.edu.co',
+        pass: process.env.DB_SEGURA // No es necesario incluir espacios al principio y al final
+      }
+    });
+
+    const mailOptions = {
+      from: 'igrisales01@misena.edu.co',
+      to: correo,
+      subject: 'Recuperar contraseña',
+      text: `Para actualizar la contraseña ingresa aquí: http://localhost:4001/actualizarContrasena/${usuarioA._id}`
+    }
+
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.error(error);
+        res.status(500).send('Error al enviar el correo');
+      } else {
+        console.log('Email sent: ' + info.response);
+        res.send('Correo enviado correctamente');
+      }
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error interno del servidor');
   }
-
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log('Email sent: ' + info.response)
-    }
-  })
 }
 
 // Actualizar contraseña y guardar en la BD con la información del usuario
-
 exports.nuevaContraseña = async (req, res) => {
-  const id = { _id: req.body.bucarId }
-  const actu = {
-    contraseñaUsuario: req.body.contrasenaNueva
+  try {
+    const id = { _id: req.body.buscarId };
+    const actu = {
+      contraseñaUsuario: req.body.contrasenaNueva
+    }
+    await modeloUsuario.findByIdAndUpdate(id, actu);
+    res.redirect('/');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error interno del servidor');
   }
-  await modeloUsuario.findByIdAndUpdate(id, actu)
-  res.redirect('/')
 }
 
 //exportar exel
@@ -162,7 +187,6 @@ exports.nuevaContraseña = async (req, res) => {
   const xl = require('excel4node')
   const path = require('path')
   const fs = require('fs')
-  const multer = require('multer')
   
   exports.descargarExcel = async (req, res) => {
     // configuramos el excel4node

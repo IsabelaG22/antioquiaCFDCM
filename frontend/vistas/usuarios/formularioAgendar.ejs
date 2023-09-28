@@ -17,42 +17,41 @@
 </head>
 
 
-<body id="background-admin">
-    <!--Formulario registro de usuario-->
+<body id="background-admin-reg">
+    <!--Formulario registro de agendar-->
 <body>
     <div class="container">
-        <h2>Agendar Servicio</h2> <br>
-        <form action="/registrarAgenda" method="POST">
+        <h2 class="d-flex justify-content-center pt-3">Agendar Servicio</h2> <br>
+        <div class="container w-50">
+            <form action="/registrarAgenda" method="POST">
 
-            <div class="col">
-                <label for="manzana" class="form-label">Manzana :</label>
-                <input type="text" class="form-control" id="manzana" name="manzana" maxlength="100" required>
-            </div>
+                <div class="col">
+                    <label for="manzana" class="form-label">Manzana :</label>
+                    <input type="text" class="form-control" id="manzana" name="manzana" maxlength="100" required>
+                </div>
 
-            <div class="col">
-                <label for="servicio" class="form-label">Servicio:</label>
-                <input type="text" class="form-control" id="servicio" name="servicio" maxlength="100" maxlength="50"
-                    required>
-            </div>
+                <div class="col">
+                    <label for="servicio" class="form-label">Servicio:</label>
+                    <input type="text" class="form-control" id="servicio" name="servicio" maxlength="100" maxlength="50"
+                        required>
+                </div>
 
-            <div class="col">
-                <label for="fecha" class="form-label">Fecha:</label>
+                <div class="col">
+                    <label for="fecha" class="form-label">Fecha:</label>
 
-                <input type="text" id="fecha" name="fecha"  placeholder="año-mes-diaThora:minutos" required class="form-control"  maxlength="16"/>
-            </div>
+                    <input type="text" id="fecha" name="fecha"  placeholder="año-mes-diaThora:minutos" required class="form-control"  maxlength="16"/>
+                </div>
 
 
-            <div class="col">
-                <label for="correo" class="form-label">Correo Electrónico:</label>
-                <input type="email" class="form-control" id="correo" name="correo" inputmode="numeric" minlength="10"
-                    maxlength="50" required>
-                <label for="correo" class="form-label">Correo electronico:</label>
-                <input type="email" class="form-control" id="correo" name="correo" 
-                    maxlength="100" required>
-            </div>
+                <div class="col">
+                    <label for="correo" class="form-label">Correo Electrónico:</label>
+                    <input type="email" class="form-control" id="correo" name="correo" inputmode="numeric" minlength="10"
+                        maxlength="100" required>
+                </div>
 
-            <button type="submit" class="btn btn-outline-primary mt-3">Agendar</button>
-        </form>
+                <button type="submit" class="btn btn-outline-primary mt-3">Agendar</button>
+            </form>
+        </div>
     </div>
     </div>
 

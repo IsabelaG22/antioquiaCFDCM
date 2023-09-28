@@ -19,12 +19,8 @@ router.get('/tablaServicios', vistas.tablaServicios);
 router.get('/tablaManzanas', vistas.tablaManzanas);
 router.get('/tablaAgendas', vistas.tablaAgendas);
 router.get('/tablaEstablecimientos', vistas.tablaEstablecimiento);
-router.get('/formularioRecuperar', vistas.recuperarContra);
-router.get('/formularioActualizar', vistas.actualizarContra);
 router.get('/informacionManzanas',vistas.informacionManzanas);
 router.get('/informacionLavanderias', vistas.informacionLavanderia);
-// router.get('/formularioRecuperar', vistas.recuperarContra);
-// router.get('/formularioActualizar', vistas.actualizarContra);
 
 
 //Formularios registro 
@@ -45,10 +41,10 @@ router.post('/actualizarUsuario', crudUsuarios.actualizarusuario);
 router.post('/inicioSesion', crudUsuarios.inicioSesion);
 router.get('/cerrarsesion', crudUsuarios.cerrarsesion) 
 //-----
-router.get('/recuperarContrasena', crudUsuarios.recuperarContraseña)//vista formulario
-router.get('/actualizarContrasena/:id', crudUsuarios.actualizarContrasena) //vista formulario
-router.post('/nuevaContrasena', crudUsuarios.nuevaContraseña)//Cambio de contraseña
-router.post('/rcontrasena', crudUsuarios.rcontrasena)// envio de correo con link recuperar contraseña
+router.get('/recuperarContrasena', crudUsuarios.recuperarContraseña)
+router.get('/actualizarContrasena/:id', crudUsuarios.actualizarContrasena)
+router.post('/nuevaContrasena', crudUsuarios.nuevaContraseña)
+router.post('/rcontrasena', crudUsuarios.rcontrasena)// envia el correos
 //_------
 
 //Servicios

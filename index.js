@@ -8,7 +8,7 @@ const dotenv = require('dotenv')
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })) 
 
-app.use('/estaticas', express.static('estaticas'))
+app.use('/estaticas', express.static('frontend/estaticas'))
 
 const cookieParser = require('cookie-parser')
 app.use(cookieParser())

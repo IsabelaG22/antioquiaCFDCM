@@ -7,7 +7,9 @@ const modeloEstablecimientos = require('../modelos/establecimientos.model')
 
 //FUNCIONES PARA RENDERISAR LAS PAGINAS-------
 exports.index = async (req, res) => {
+  const serviciosInfo = await modeloServicios.find()
   res.render('../frontend/vistas/index.ejs',{
+    servicios: serviciosInfo,
     rol: req.cookies.rol,
     usuario: await modeloUsuario.findOne({ _id: req.cookies.usuarios }),
   })
@@ -15,7 +17,7 @@ exports.index = async (req, res) => {
 
 exports.localidades = async(req, res) => {
   const municipios = await modeloMunicipios.find() 
-  res.render('localidades.ejs', {
+  res.render('../frontend/vistas/localidades.ejs', {
     localidades:municipios
   })
 }
@@ -25,11 +27,11 @@ exports.admin = (req, res) => {
 }
 
 exports.informacionManzanas = (req, res) => {
-  res.render('info_Manzanas.ejs')
+  res.render('../frontend/vistas/info_Manzanas.ejs')
 }
 
 exports.informacionLavanderia = (req,res) => {
-  res.render('infoLavanderia.ejs')
+  res.render('../frontend/vistas/infoLavanderia.ejs')
 }
 
 
@@ -38,7 +40,7 @@ exports.formularioMunicipios = (req, res) => {
   res.render('../frontend/vistas/admin/formularioRegistrarMunicipio');
 }
 exports.formularioAgendar = (req, res) => {
-  res.render('../frontend/vistas/admin/formularioAgendar.ejs');
+  res.render('../frontend/vistas/usuarios/formularioAgendar.ejs');
 }
 
 exports.formularioServicios = (req, res) => {
@@ -56,13 +58,7 @@ exports.formularioRegistroUsuario = (req, res) => {
   res.render('../frontend/vistas/usuarios/formularioRegistrarUsuario.ejs')
 }
 
-exports.recuperarContra = (req, res) => {
-  res.render('../frontend/vistas/usuarios/formularioRecuperarContraseña.ejs')
-}
 
-exports.actualizarContra = (req, res) => {
-  res.render('../frontend/vistas/usuarios/formularioActualizarContra.ejs')
-}
 
 
 
