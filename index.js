@@ -26,5 +26,5 @@ app.listen(PORT, ()=>{
 })
 
 
-const rutas = require('./rutas/enrutamiento')
+const rutas = require('./backend/rutas/enrutamiento')
 app.use('/', rutas)

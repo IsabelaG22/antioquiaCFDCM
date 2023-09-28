@@ -7,7 +7,7 @@ const modeloEstablecimientos = require('../modelos/establecimientos.model')
 
 //FUNCIONES PARA RENDERISAR LAS PAGINAS-------
 exports.index = async (req, res) => {
-  res.render('index.ejs',{
+  res.render('../frontend/vistas/index.ejs',{
     rol: req.cookies.rol,
     usuario: await modeloUsuario.findOne({ _id: req.cookies.usuarios }),
   })
@@ -21,7 +21,7 @@ exports.localidades = async(req, res) => {
 }
 
 exports.admin = (req, res) => {
-  res.render('admin.ejs')
+  res.render('../frontend/vistas/admin/admin.ejs')
 }
 
 exports.informacionManzanas = (req, res) => {
@@ -35,33 +35,33 @@ exports.informacionLavanderia = (req,res) => {
 
 //FORMULARIOS
 exports.formularioMunicipios = (req, res) => {
-  res.render('formularioRegistrarMunicipio');
+  res.render('../frontend/vistas/admin/formularioRegistrarMunicipio');
 }
 exports.formularioAgendar = (req, res) => {
-  res.render('formularioAgendar.ejs');
+  res.render('../frontend/vistas/admin/formularioAgendar.ejs');
 }
 
 exports.formularioServicios = (req, res) => {
-  res.render('formularioServicios.ejs');
+  res.render('../frontend/vistas/admin/formularioServicios.ejs');
 }
 
 exports.formularioManzanas = (req, res) => {
-  res.render('formularioManzanas.ejs');
+  res.render('../frontend/vistas/admin/formularioManzanas.ejs');
 }
 exports.formularioEstablecimiento = (req, res) => {
-  res.render('formularioEstablecimientos.ejs');
+  res.render('../frontend/vistas/admin/formularioEstablecimientos.ejs');
 }
 
 exports.formularioRegistroUsuario = (req, res) => {
-  res.render('formularioRegistrarUsuario.ejs')
+  res.render('../frontend/vistas/usuarios/formularioRegistrarUsuario.ejs')
 }
 
 exports.recuperarContra = (req, res) => {
-  res.render('formularioRecuperarContraseña.ejs')
+  res.render('../frontend/vistas/usuarios/formularioRecuperarContraseña.ejs')
 }
 
 exports.actualizarContra = (req, res) => {
-  res.render('formularioActualizarContra.ejs')
+  res.render('../frontend/vistas/usuarios/formularioActualizarContra.ejs')
 }
 
 
@@ -70,39 +70,39 @@ exports.actualizarContra = (req, res) => {
 //TABLAS
 exports.tablaEstablecimiento = async (req,res)=>{
   const tablaEstablecimientos = await modeloEstablecimientos.find()
-  res.render('tablaEstablecimientos.ejs',{
+  res.render('../frontend/vistas/admin/tablaEstablecimientos.ejs',{
     establecimiento: tablaEstablecimientos
   })
 }
 exports.tablaAgendas = async (req,res)=>{
   const tablaAgendas = await modeloAgendas.find()
-  res.render('tablaAgendas.ejs',{
+  res.render('../frontend/vistas/admin/tablaAgendas.ejs',{
     agendas: tablaAgendas
   })
 }
 exports.tablaManzanas = async (req, res)=>{
   const tablaManzanas = await modelosManzanas.find()
-  res.render('tablaManzanas.ejs',{
+  res.render('../frontend/vistas/admin/tablaManzanas.ejs',{
     manzanas: tablaManzanas
   })
 }
 exports.tablaMunicipios = async (req, res) => {
   const tablaMunicipios = await modeloMunicipios.find()
-  res.render('tablaMunicipios',{
+  res.render('../frontend/vistas/admin/tablaMunicipios',{
     municipios: tablaMunicipios
   })
 }
 
 exports.tablaUsuarios = async (req, res) => {
   const tablaUsuarios = await modeloUsuario.find()
-  res.render('tablaUsuarios.ejs', {
+  res.render('../frontend/vistas/usuarios/tablaUsuarios.ejs', {
     usuarios: tablaUsuarios
   })
 }
 
 exports.tablaServicios = async(req, res)=>{
   const tablaServicios = await modeloServicios.find()
-  res.render('tablaServicios.ejs', {
+  res.render('../frontend/vistas/admin/tablaServicios.ejs', {
     servicios: tablaServicios
   })
 }

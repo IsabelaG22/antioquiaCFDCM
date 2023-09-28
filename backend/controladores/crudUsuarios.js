@@ -104,13 +104,13 @@ exports.cerrarsesion = async (req, res) => {
 
 // Formulario correo recuperar CONTRASEÑA
 exports.recuperarContraseña = (req, res) => {
-  res.render('formularioRecuperarContraseña.ejs')
+  res.render('../frontend/vistas/usuarios/formularioRecuperarContraseña.ejs')
 }
 
 // RECUPERAR CONTRASEÑA
 exports.actualizarContrasena = async (req, res) => {
   const buscarId = await modeloUsuario.findOne({ _id: req.params.id })
-  res.render('formularioActualizarContra.ejs', { buscarId })
+  res.render('../frontend/vistas/usuarios/formularioActualizarContra.ejs', { buscarId })
 }
 
 // ENVIAR CORREO RECUPERAR CONTRASEÑA

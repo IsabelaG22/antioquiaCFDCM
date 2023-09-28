@@ -1,4 +1,5 @@
-const coneccionBDMongo = require('../configuracion/configuracionBd')
+const coneccionBDMongo = require('../../backend/configuracion/configuracionBd')
+
 
 const SchemaAgendas = new coneccionBDMongo.Schema({
     manzana: {

@@ -1,10 +1,10 @@
 const vistas = require('../controladores/controladores');
-const crudUsuarios = require('../../controladores/crudUsuarios');
-const crudServicios = require('../../controladores/crudServicios');
-const crudMunicipios = require('../../controladores/crudMunicipios');
-const crudManzanas = require('../../controladores/crudManzanas');
-const crudAgendas = require('../../controladores/crudAgendas');
-const crudEstablecimientos = require('../../controladores/crudEstablecimientos')
+const crudUsuarios = require('../controladores/crudUsuarios');
+const crudServicios = require('../controladores/crudServicios');
+const crudMunicipios = require('../controladores/crudMunicipios');
+const crudManzanas = require('../controladores/crudManzanas');
+const crudAgendas = require('../controladores/crudAgendas');
+const crudEstablecimientos = require('../controladores/crudEstablecimientos')
 const express = require('express');
 const router = express.Router();
 
