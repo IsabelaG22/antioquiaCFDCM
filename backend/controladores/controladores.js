@@ -91,7 +91,7 @@ exports.tablaMunicipios = async (req, res) => {
 
 exports.tablaUsuarios = async (req, res) => {
   const tablaUsuarios = await modeloUsuario.find()
-  res.render('../frontend/vistas/usuarios/tablaUsuarios.ejs', {
+  res.render('../frontend/vistas/admin/tablaUsuarios.ejs', {
     usuarios: tablaUsuarios
   })
 }
