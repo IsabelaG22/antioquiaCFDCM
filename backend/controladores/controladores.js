@@ -15,6 +15,10 @@ exports.index = async (req, res) => {
   })
 }
 
+exports.mapaManzanas = (req, res) =>{
+  res.render('../frontend/vistas/mapa.ejs')
+}
+
 exports.localidades = async(req, res) => {
   const municipios = await modeloMunicipios.find() 
   res.render('../frontend/vistas/localidades.ejs', {

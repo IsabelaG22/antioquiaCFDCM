@@ -23,6 +23,7 @@ router.get('/informacionManzanas',vistas.informacionManzanas);
 router.get('/informacionLavanderias', vistas.informacionLavanderia);
 
 
+
 //Formularios registro 
 router.get('/formularioRegistro', vistas.formularioRegistroUsuario);
 router.get('/formularioMunicipio', vistas.formularioMunicipios);
