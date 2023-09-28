@@ -11,8 +11,13 @@
     <link rel="stylesheet" href="https://bootswatch.com/5/pulse/bootstrap.min.css">
 </head>
 <body>
-  <%- include('./parciales/navbar')%>
-    
+  
+  
+  <%if(rol=='usuario'){%>
+    <%- include('./parciales/navbarUsuario')%>
+  <%}else{%>
+    <%- include('./parciales/navbar')%>
+  <%}%>
     
     <div class="item active">
         <img src="https://manzanasdelcuidado.gov.co/wp-content/uploads/2023/08/home-manz-2_.jpg" class="d-block w-100" alt="...">

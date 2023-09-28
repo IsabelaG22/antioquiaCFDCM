@@ -2,7 +2,7 @@ const modeloAgendas = require('../modelos/agendas.model')
 
 
 //FUNCIONES CRUD-----------
-//registrar usuario 
+//registrar agendas 
 exports.registrarAgenda = async (req, res) => {
     const registrarAgenda = new modeloAgendas({
         manzana: req.body.manzana,
@@ -14,9 +14,9 @@ exports.registrarAgenda = async (req, res) => {
 
     res.redirect('/tablaAgendas')
     console.log(registrarAgenda)
-} // funcion para que los datos del usuario sean guardados en la base de datos 
+} // funcion para que los datos del agendas sean guardados en la base de datos 
 
-//eliminar Usuario 
+//eliminar agendas 
 
 exports.eliminarAgenda = async (req, res)=>{
     const id = req.params.id;
@@ -25,7 +25,7 @@ exports.eliminarAgenda = async (req, res)=>{
    
 }
 
-//Actualizar Usuario 
+//Actualizar agendas 
 exports.actualizarAgenda = async (req, res) => {
     const id = { _id: req.body.idnuevo }
     const actu = {
@@ -45,7 +45,7 @@ exports.actualizarAgenda = async (req, res) => {
 
 //exportar exel
 
-  // GENERAR TABLA EXCEL DE LOS DATOS SOBRE LOS PRODUCTOS ----------------------------------------
+  // GENERAR TABLA EXCEL DE LOS DATOS SOBRE LAS AGENDAS ----------------------------------------
 
   const xl = require('excel4node')
   const path = require('path')
@@ -98,11 +98,11 @@ exports.actualizarAgenda = async (req, res) => {
     // agregamos el contenido de la base de datos con un for o un forEach para llamar todos los datos
 
   
-    listaAgendas.forEach(datoUsuario => {
-      ws.cell(fila, 1).string(datoUsuario.manzana).style(contenidoEstilo)
-      ws.cell(fila, 2).string(datoUsuario.servicio).style(contenidoEstilo)
-      ws.cell(fila, 3).string(datoUsuario.fecha).style(contenidoEstilo)
-      ws.cell(fila, 4).string(datoUsuario.correoElectronico).style(contenidoEstilo)
+    listaAgendas.forEach(datoagendas => {
+      ws.cell(fila, 1).string(datoagendas.manzana).style(contenidoEstilo)
+      ws.cell(fila, 2).string(datoagendas.servicio).style(contenidoEstilo)
+      ws.cell(fila, 3).string(datoagendas.fecha).style(contenidoEstilo)
+      ws.cell(fila, 4).string(datoagendas.correoElectronico).style(contenidoEstilo)
 
   
       fila = fila + 1

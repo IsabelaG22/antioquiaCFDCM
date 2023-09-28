@@ -17,14 +17,19 @@
 
 
 <body>
-    <!--Formulario registro de usuario-->
+    <div class="container text-center">
+        <a href="/admin" class="btn btn-outline-dark mb-2">volver</a>
+    
+    
+    </div>
+    
     <div class="container">
         <h2>Guardar un Municipio</h2> <br>
         <form action="/registrarMunicipio" method="POST">
 
             <div class="col">
                 <label for="Nombre" class="form-label">Nombre :</label>
-                <input type="text" class="form-control" id="Nombre" name="Nombre" inputmode="text"
+                <input type="text" class="form-control" id="Nombre" name="Nombre" inputmode="text" maxlength="100"
                 required>
             </div>
 
@@ -34,9 +39,7 @@
                     required>
             </div>
 
-            <div class="mb-3">
-                <input type="text" class="form-control" id="rolCliente" name="rolCliente" value="cliente" hidden>
-            </div>
+         
             <button type="submit" class="btn btn-outline-primary">Guardar Municipio</button>
         </form>
 

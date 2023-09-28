@@ -29,7 +29,7 @@
                 <div class="mb-3">
                     <div class="col">
                         <label for="tipo" class="form-label">Tipo de documento:</label>
-                        <input type="text" class="form-control" id="tipo" name="tipo" inputmode="text" required>
+                        <input type="text" class="form-control" id="tipo" name="tipo" inputmode="text" maxlength="100" required >
                     </div>
                 </div>
 
@@ -37,14 +37,14 @@
                     <div class="col">
                         <label for="documento" class="form-label">Documento:</label>
                         <input type="number" class="form-control" id="documento" name="documento" inputmode="numeric"
-                            minlength="10" maxlength="50" required>
+                            minlength="10" required>
                     </div>
                 </div>
                 <div class="mb-3">
                     <div class="col">
                         <label for="Nombre" class="form-label">Nombres:</label>
                         <input type="text" class="form-control" id="Nombre" name="Nombre" inputmode="text" minlength="3"
-                            maxlength="50" required>
+                            maxlength="100" required>
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@
                     <div class="col">
                         <label for="Apellido" class="form-label">Apellidos:</label>
                         <input type="text" class="form-control" id="Apellido" name="Apellido" inputmode="text" minlength="3"
-                            maxlength="50" required>
+                            maxlength="100" required>
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@
                     <div class="col">
                         <label for="Telefono" class="form-label">Telefono:</label>
                         <input type="number" class="form-control" id="Telefono" name="Telefono" inputmode="tel" minlength="10"
-                            maxlength="50" required>
+                            required>
                     </div>
                 </div>
                 
@@ -72,20 +72,20 @@
 
                 <div class="mb-3">
                     <label for="Ciudad" class="form-label">Ciudad:</label>
-                    <input type="text" class="form-control" id="Ciudad" name="Ciudad" inputmode="text" minlength="10"
-                        maxlength="50" required>
+                    <input type="text" class="form-control" id="Ciudad" name="Ciudad" inputmode="text" 
+                        maxlength="100" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="Ocupacion" class="form-label">Ocupacion: </label>
-                    <input type="text" class="form-control" id="Ocupacion" name="Ocupacion" inputmode="text" minlength="8"
-                        maxlength="50" required>
+                    <input type="text" class="form-control" id="Ocupacion" name="Ocupacion" inputmode="text"
+                        maxlength="100" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="correo" class="form-label">Correo electronico:</label>
-                    <input type="email" class="form-control" id="correo" name="correo" inputmode="email" minlength="10"
-                        maxlength="50" required>
+                    <input type="email" class="form-control" id="correo" name="correo" inputmode="email" 
+                        maxlength="100" required>
                 </div>
 
                 <div class="mb-3">
@@ -93,6 +93,7 @@
                     <input type="password" class="form-control" id="contraseña" name="contraseña" inputmode="text"
                         minlength="8" maxlength="50" required>
                 </div>
+                <input type="text" class="form-control" id="rol" name="rol"hidden value="usuario">
 
                 <button type="submit" class="btn btn-outline-primary">Registrarse</button>
             </div>    

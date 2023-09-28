@@ -1,4 +1,6 @@
 const modeloUsuario = require('../modelos/usuarios.model')
+const { validationResult, cookie } = require('express-validator')
+const nodemailer = require('nodemailer')
 
 //FUNCIONES CRUD-----------
 //registrar usuario 
@@ -13,11 +15,13 @@ exports.registrarUsuario = async (req, res) => {
       ciudadUsuario: req.body.Ciudad,
       ocupacionUsuario: req.body.Ocupacion,
       correoElectronicoUsuario: req.body.correo,
-      contraseñaUsuario: req.body.contraseña
+      contraseñaUsuario: req.body.contraseña,
+      rol: req.body.rol
+
     })
     await registrarUsuario.save()
 
-    res.render('index.ejs')
+    res.redirect('/')
     console.log(registrarUsuario)
 } // funcion para que los datos del usuario sean guardados en la base de datos 
 
@@ -45,9 +49,6 @@ exports.actualizarusuario = async (req, res) => {
   }
 
   //Login
-
-
-
   exports.inicioSesion = async (req, res) => {
     try {
       const correo = req.body.correoElectronicoUsuario;
@@ -64,9 +65,15 @@ exports.actualizarusuario = async (req, res) => {
   
       // Comprobar la contraseña
       if (usuario.contraseñaUsuario === contraseña) {
+        //Creando cokiee
+        
+        res.cookie('rol', `${usuario.rol}`, {
+          httpOnly: true
+        })
+        console.log(res.cookie)
         // Contraseña correcta
-        console.log('Bienvenido vendedor');
-        // Redirigir a la página de inicio o realizar alguna acción de autenticación aquí
+        console.log('Bienvenido Usuario');
+        // Redirigir a la página de inicio 
         return res.redirect('/');
       } else {
         // Contraseña incorrecta
@@ -80,9 +87,77 @@ exports.actualizarusuario = async (req, res) => {
   };
   
 
+
+// CERRAR SESION
+
+exports.cerrarsesion = async (req, res) => {
+  res.clearCookie('rol')
+  res.clearCookie('usuario')
+
+  res.redirect('/')
+
+  console.log(cookie)
+}
+
+
+//Actualizar contraseña
+
+// Formulario correo recuperar CONTRASEÑA
+exports.recuperarContraseña = (req, res) => {
+  res.render('formularioRecuperarContraseña.ejs')
+}
+
+// RECUPERAR CONTRASEÑA
+exports.actualizarContrasena = async (req, res) => {
+  const buscarId = await modeloUsuario.findOne({ _id: req.params.id })
+  res.render('formularioActualizarContra.ejs', { buscarId })
+}
+
+// ENVIAR CORREO RECUPERAR CONTRASEÑA
+exports.rcontrasena = async (req, res) => {
+  const correo = req.body.correoElectronicoUsuario
+  const usuarioA = await modeloUsuario.findOne({ correoElectronicoUsuario: correo })
+
+  console.log(req.body.correoElectronicoUsuario)
+  console.log('entra')
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'igrisales01@misena.edu.co',
+      pass: ` ${process.env.DB_SEGURA}`
+    }
+  })
+
+  const mailOptions = {
+    from: 'igrisales01@misena.edu.co',
+    to: correo,
+    subject: 'Recuperar contraseña',
+    text: `para actualizar la contraseña ingresa aqui: http://localhost:4001/actualizarContrasena/${usuarioA._id}`
+  }
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error)
+    } else {
+      console.log('Email sent: ' + info.response)
+    }
+  })
+}
+
+// Actualizar contraseña y guardar en la BD con la información del usuario
+
+exports.nuevaContraseña = async (req, res) => {
+  const id = { _id: req.body.bucarId }
+  const actu = {
+    contraseñaUsuario: req.body.contrasenaNueva
+  }
+  await modeloUsuario.findByIdAndUpdate(id, actu)
+  res.redirect('/')
+}
+
 //exportar exel
 
-  // GENERAR TABLA EXCEL DE LOS DATOS SOBRE LOS PRODUCTOS ----------------------------------------
+  // GENERAR TABLA EXCEL DE LOS DATOS SOBRE LOS USUARIOS ----------------------------------------
 
   const xl = require('excel4node')
   const path = require('path')

@@ -1,7 +1,7 @@
 const modeloManzanas = require('../modelos/manzanas.model')
 
 //FUNCIONES CRUD-----------
-//registrar usuario 
+//registrar manzanas 
 exports.registrarManzana = async (req, res) => {
     const registrarManzana = new modeloManzanas({
         codigo: req.body.Codigo,
@@ -15,9 +15,9 @@ exports.registrarManzana = async (req, res) => {
 
     res.redirect('/tablaManzanas')
     console.log(registrarManzana)
-} // funcion para que los datos del usuario sean guardados en la base de datos 
+} // funcion para que los datos del manzanas sean guardados en la base de datos 
 
-//eliminar Usuario 
+//eliminar manzanas 
 
 exports.eliminarManzana = async (req, res)=>{
     const id = req.params.id;
@@ -26,7 +26,7 @@ exports.eliminarManzana = async (req, res)=>{
    
 }
 
-//Actualizar Usuario 
+//Actualizar manzanas 
 exports.actualizarManzana = async (req, res) => {
     const id = { _id: req.body.idnuevo }
     const actu = {
@@ -48,7 +48,7 @@ exports.actualizarManzana = async (req, res) => {
 
 //exportar exel
 
-  // GENERAR TABLA EXCEL DE LOS DATOS SOBRE LOS PRODUCTOS ----------------------------------------
+  // GENERAR TABLA EXCEL DE LOS DATOS SOBRE LAS MANZANAS ----------------------------------------
 
   const xl = require('excel4node')
   const path = require('path')
@@ -103,13 +103,13 @@ exports.actualizarManzana = async (req, res) => {
     // agregamos el contenido de la base de datos con un for o un forEach para llamar todos los datos
 
   
-    listaManzanas.forEach(datoUsuario => {
-      ws.cell(fila, 1).string(datoUsuario.codigo).style(contenidoEstilo)
-      ws.cell(fila, 2).string(datoUsuario.nombre).style(contenidoEstilo)
-      ws.cell(fila, 3).string(datoUsuario.localidad).style(contenidoEstilo)
-      ws.cell(fila, 4).string(datoUsuario.direccion).style(contenidoEstilo)
-      ws.cell(fila, 5).string(datoUsuario.tipoServicio).style(contenidoEstilo)
-      ws.cell(fila, 6).string(datoUsuario.categoriaServicio).style(contenidoEstilo)
+    listaManzanas.forEach(datomanzanas => {
+      ws.cell(fila, 1).string(datomanzanas.codigo).style(contenidoEstilo)
+      ws.cell(fila, 2).string(datomanzanas.nombre).style(contenidoEstilo)
+      ws.cell(fila, 3).string(datomanzanas.localidad).style(contenidoEstilo)
+      ws.cell(fila, 4).string(datomanzanas.direccion).style(contenidoEstilo)
+      ws.cell(fila, 5).string(datomanzanas.tipoServicio).style(contenidoEstilo)
+      ws.cell(fila, 6).string(datomanzanas.categoriaServicio).style(contenidoEstilo)
 
   
       fila = fila + 1

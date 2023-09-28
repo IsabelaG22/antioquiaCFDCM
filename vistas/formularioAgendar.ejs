@@ -17,7 +17,6 @@
 
 
 <body>
-    <!--Formulario registro de usuario-->
     <div class="container">
         <h2>Agendar Servicio</h2> <br>
         <form action="/registrarAgenda" method="POST">
@@ -36,14 +35,14 @@
             <div class="col">
                 <label for="fecha" class="form-label">Fecha:</label>
 
-                <input type="text" id="fecha" name="fecha"  placeholder="YYYY-MM-DDTHH:MM" required class="form-control" />
+                <input type="text" id="fecha" name="fecha"  placeholder="año-mes-diaThora:minutos" required class="form-control"  maxlength="16"/>
             </div>
 
 
             <div class="col">
                 <label for="correo" class="form-label">Correo electronico:</label>
-                <input type="email" class="form-control" id="correo" name="correo" inputmode="numeric" minlength="10"
-                    maxlength="50" required>
+                <input type="email" class="form-control" id="correo" name="correo" 
+                    maxlength="100" required>
             </div>
 
             <button type="submit" class="btn btn-outline-primary">Agendar</button>

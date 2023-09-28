@@ -10,6 +10,9 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/estaticas', express.static('estaticas'))
 
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
+
 dotenv.config()
 
 app.set('view engine', 'ejs')
