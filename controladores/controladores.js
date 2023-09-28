@@ -6,8 +6,11 @@ const modeloAgendas = require('../modelos/agendas.model')
 const modeloEstablecimientos = require('../modelos/establecimientos.model')
 
 //FUNCIONES PARA RENDERISAR LAS PAGINAS-------
-exports.index = (req, res) => {
-  res.render('index.ejs')
+exports.index = async (req, res) => {
+  res.render('index.ejs',{
+    rol: req.cookies.rol,
+    usuario: await modeloUsuario.findOne({ _id: req.cookies.usuarios }),
+  })
 }
 
 exports.localidades = (req, res) => {
