@@ -19,15 +19,12 @@ router.get('/tablaServicios', vistas.tablaServicios);
 router.get('/tablaManzanas', vistas.tablaManzanas);
 router.get('/tablaAgendas', vistas.tablaAgendas);
 router.get('/tablaEstablecimientos', vistas.tablaEstablecimiento);
-<<<<<<< HEAD
 router.get('/formularioRecuperar', vistas.recuperarContra);
 router.get('/formularioActualizar', vistas.actualizarContra);
 router.get('/informacionManzanas',vistas.informacionManzanas);
 router.get('/informacionLavanderias', vistas.informacionLavanderia);
-=======
 // router.get('/formularioRecuperar', vistas.recuperarContra);
 // router.get('/formularioActualizar', vistas.actualizarContra);
->>>>>>> dev_IsabelaG
 
 
 //Formularios registro 
