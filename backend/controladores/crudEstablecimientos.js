@@ -7,7 +7,7 @@ exports.registrarEstablecimiento = async (req, res) => {
       codigo: req.body.Codigo,
       nombre: req.body.Nombre,
       responsable: req.body.Responsable,
-      direccion: req.body.Direccion
+      direccion: req.body.Direccion,
     })
     await registrarEstablecimiento.save()
 

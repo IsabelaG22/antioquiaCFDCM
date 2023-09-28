@@ -8,8 +8,10 @@ const modeloEstablecimientos = require('../modelos/establecimientos.model')
 //FUNCIONES PARA RENDERISAR LAS PAGINAS-------
 exports.index = async (req, res) => {
   const serviciosInfo = await modeloServicios.find()
+  const tablaEstablecimientos = await modeloEstablecimientos.find()
   res.render('../frontend/vistas/index.ejs',{
     servicios: serviciosInfo,
+    establecimiento: tablaEstablecimientos,
     rol: req.cookies.rol,
     usuario: await modeloUsuario.findOne({ _id: req.cookies.usuarios }),
   })
@@ -17,8 +19,11 @@ exports.index = async (req, res) => {
 
 exports.localidades = async(req, res) => {
   const municipios = await modeloMunicipios.find() 
+  const tablaManzanas = await modelosManzanas.find()
   res.render('../frontend/vistas/localidades.ejs', {
-    localidades:municipios
+    localidades:municipios,
+    establecimiento: tablaManzanas
+
   })
 }
 

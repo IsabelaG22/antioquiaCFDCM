@@ -4,7 +4,8 @@ const coneccionBDMongo = require('../../backend/configuracion/configuracionBd')
 const SchemaManzanas = new coneccionBDMongo.Schema({
     codigo: {
         type: String,
-        require: true
+        require: true,
+        unique:true
     },
     nombre: {
         type: String,
