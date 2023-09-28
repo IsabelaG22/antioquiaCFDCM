@@ -25,6 +25,10 @@ exports.informacionManzanas = (req, res) => {
   res.render('info_Manzanas.ejs')
 }
 
+exports.informacionLavanderia = (req,res) => {
+  res.render('infoLavanderia.ejs')
+}
+
 
 //FORMULARIOS
 exports.formularioMunicipios = (req, res) => {

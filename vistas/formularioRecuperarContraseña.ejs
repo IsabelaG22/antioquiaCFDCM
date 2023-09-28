@@ -23,26 +23,23 @@
 
   <div class="row g-0" >
 
-    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
 
-      <div class=" col-md-8 border border-primary mt-5 ">
-    <h5 class="card-header mt-3">Recuperar contraseña</h5>
+        <div class=" col-md-8 border border-primary mt-5 ">
+          <h5 class="card-header mt-3">Recuperar contraseña</h5>
+        
+          <form class="row g-3"  action="rcontrasena" method="post">
 
-                
-  <form class="row g-3"  action="rcontrasena" method="post">
+            <div class="mb-3">
+              <label for="correoElectronicoUsuario" class="form-label p-1">Se enviara un correo electronico para recuperar tu contraseña:</label>
+              <input type="text" class="form-control" id="correoElectronicoUsuario" name="correoElectronicoUsuario" placeholder="Ingresa tu correo electronico">
+            </div>
+              <button type="submit" class="btn btn-outline-primary">Enviar</button>
+              <a class="btn btn-outline-primary mb-3" href="/inicio" role="button">Cancelar</a>
 
-    <div class="mb-3">
-        <label for="correoElectronicoUsuario" class="form-label p-1">Se enviara un correo electronico para recuperar tu contraseña:</label>
-        <input type="text" class="form-control" id="correoElectronicoUsuario" name="correoElectronicoUsuario" placeholder="Ingresa tu correo electronico">
-    </div>
-      <button type="submit" class="btn btn-outline-primary">Enviar</button>
-      <a class="btn btn-outline-primary mb-3" href="/inicio" role="button">Cancelar</a>
-
-    </div>
-  </form>
-
-        </div>
-    </div>
+            </div>
+          </form>
+      </div>
 </div>
 
 

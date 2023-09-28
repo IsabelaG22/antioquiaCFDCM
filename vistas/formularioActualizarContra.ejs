@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
-    <script src="	https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/5/pulse/bootstrap.min.css">
+    <link rel="stylesheet" href="/estaticas/css/styleBackground.css">
 </head>
 
 <body>
@@ -21,24 +23,20 @@
     
 
     <div class="row g-0">
-
         <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class=" col-md-8 border border-primary mt-5 shadow p-3 mb-5 bg-white rounded " style="background-color: white;">
+                <h5 class="card-header mt-2">Actualizar contraseña</h5>
 
-            <div class=" col-md-8 border border-dark mt-5 ">
-                <h5 class="card-header">Actualizar contraseña</h5>
-
-
-                <form class="row g-3" action="#" method="post">
-
+                <form class="row g-3 " action="#" method="post">
                     <div class="mb-3">
-                        <label for="correoElectronicoUsuario" class="form-label p-1">Agrega tu nueva contraseña</label>
-                        <input type="password" class="form-control" id="contrasenaNueva" name="contrasenaNueva">
+                        <input type="password" class="form-control mt-3" id="contrasenaNueva" name="contrasenaNueva" placeholder="Ingresa tu nueva contraseña">
 
                         <input type="text" hidden value="" name="bucarId">
                     </div>
-                    <button type="submit" class="btn btn-dark">Enviar</button>
-                    <a class="btn btn-dark" href="/" role="button">Cancelar</a>
-
+                    <div class="container text-center">
+                        <button type="submit" class="btn btn-outline-primary">Enviar</button>
+                        <a class="btn btn-outline-primary" href="/" type="button">Cancelar</a>
+                    </div>
             </div>
             </form>
 
