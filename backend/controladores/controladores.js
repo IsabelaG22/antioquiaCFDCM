@@ -21,8 +21,13 @@ exports.mapaManzanas = (req, res) =>{
 
 exports.localidades = async(req, res) => {
   const municipios = await modeloMunicipios.find() 
+  const tablaManzanas = await modelosManzanas.find()
   res.render('../frontend/vistas/localidades.ejs', {
-    localidades:municipios
+    localidades:municipios,
+    establecimiento: tablaManzanas,
+    rol: req.cookies.rol,
+    usuario: await modeloUsuario.findOne({ _id: req.cookies.usuarios }),
+
   })
 }
 

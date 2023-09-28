@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="../estaticas/css/styleCards_localidad.css">
 </head>
 <body>
-  <%- include('./parciales/navbar')%>
+  <%if(rol=='usuario'){%>
+    <%- include('./parciales/navbarUsuario')%>
+  <%}else{%>
+    <%- include('./parciales/navbar')%>
+  <%}%>
   <br>
 
   <!--cards localidades-->
@@ -18,7 +22,7 @@
     <h3 class="text-center mt-2">¡Encuentra la Manzana de cuidado para ti!</h3>
     <div class="row">
       
-      <%localidades.forEach(function(elemento){%>
+      <!-- <%localidades.forEach(function(elemento){%>
       <div class="flip-card col-md-3 mt-4">
         <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -30,11 +34,27 @@
             </div>
         </div>
     </div>
+    <%})%> -->
+    <br>
+
+    <%establecimiento.forEach(function(elemento){%>
+      <div class="flip-card col-md-3 mt-4">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <p class="title"><%=elemento.nombre%></p>
+            </div>
+            <div class="flip-card-back">
+                <p class="title"></p>
+                <a href="https://www.google.com/maps/place/Manzana+del+Cuidado+de+Teusaquillo/@4.6293662,-74.0732134,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f9b97183868bb:0x8faae8d341431b92!8m2!3d4.6293662!4d-74.0732134!16s%2Fg%2F11v013h3h5?hl=es-CO&entry=ttu" style="color: white;"><%=elemento.direccion%></a>
+
+                <p class="title"></p>
+                <p><%=elemento.localidad%></p>
+
+                
+            </div>
+        </div>
+    </div>
     <%})%>
     
-    <div class="text-center mt-4">
-      <h3 class="text-center">Manzana cuidadora más cercana</h3>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d207921.16688612735!2d-74.19906808116868!3d4.653478211957052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smanzanas%20cuidadoras!5e0!3m2!1ses!2sco!4v1695771721591!5m2!1ses!2sco" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
   </body>
 </html>

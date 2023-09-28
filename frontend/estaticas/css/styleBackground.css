@@ -1,10 +1,10 @@
 body::before {
     content: "";
-    background-image: url('./assets/imagenes/fondo.jpg');
+    background-image: url('../assets/imagenes/fondo.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    opacity: 0.6; /* Ajusta este valor según tu preferencia (0.5 para 50% de opacidad) */
+    opacity: 0.3; /* Ajusta este valor según tu preferencia (0.5 para 50% de opacidad) */
     position: fixed;
     top: 0;
     left: 0;
